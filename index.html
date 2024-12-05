@@ -3,44 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Quiz</title>
+  <title>Cryptocurrency Quiz</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Mandera Crypto Academy Quiz</h1>
+  <div id="quiz-container">
+    <h1>Cryptocurrency Quiz</h1>
+    <form id="quiz-form">
+      <div id="user-info">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <label for="photo">Upload Your Profile Picture:</label>
+        <input type="file" id="photo" accept="image/*" required>
+      </div>
 
-    <!-- User Info Form -->
-    <div id="user-info">
-      <form id="userForm">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="profile">Upload Profile Picture:</label>
-        <input type="file" id="profile" name="profile" accept="image/*" required>
-        
-        <button type="button" id="startQuiz">Start Quiz</button>
-      </form>
-    </div>
-
-    <!-- Quiz Questions -->
-    <div id="quiz" style="display: none;">
-      <form id="quizForm">
-        <div id="questions">
-          <!-- Questions will be dynamically generated here -->
+      <div id="questions">
+        <!-- Example Question -->
+        <div class="question">
+          <p>1. What is the first cryptocurrency?</p>
+          <label><input type="radio" name="q0" value="A"> A. Bitcoin</label><br>
+          <label><input type="radio" name="q0" value="B"> B. Ethereum</label><br>
+          <label><input type="radio" name="q0" value="C"> C. Litecoin</label><br>
+          <label><input type="radio" name="q0" value="D"> D. Ripple</label>
         </div>
-        <button type="button" id="submitQuiz">Submit</button>
-      </form>
-    </div>
-    
-    <!-- Result Section -->
-    <div id="result" style="display: none;">
-      <h2>Your Results</h2>
-      <p id="score"></p>
-      <canvas id="certificateCanvas"></canvas>
-      <button id="downloadCertificate">Download Certificate</button>
+        <div class="question">
+  <p>4. What is the maximum supply of Bitcoin?</p>
+  <div>
+    <input type="radio" name="q3" value="A" id="q3a">
+    <label for="q3a">A. 21 million</label>
+  </div>
+  <div>
+    <input type="radio" name="q3" value="B" id="q3b">
+    <label for="q3b">B. 1 billion</label>
+  </div>
+  <div>
+    <input type="radio" name="q3" value="C" id="q3c">
+    <label for="q3c">C. 100 million</label>
+  </div>
+  <div>
+    <input type="radio" name="q3" value="D" id="q3d">
+    <label for="q3d">D. Unlimited</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>5. Which blockchain is known for introducing smart contracts?</p>
+  <div>
+    <input type="radio" name="q4" value="A" id="q4a">
+    <label for="q4a">A. Bitcoin</label>
+  </div>
+  <div>
+    <input type="radio" name="q4" value="B" id="q4b">
+    <label for="q4b">B. Ethereum</label>
+  </div>
+  <div>
+    <input type="radio" name="q4" value="C" id="q4c">
+    <label for="q4c">C. Ripple</label>
+  </div>
+  <div>
+    <input type="radio" name="q4" value="D" id="q4d">
+    <label for="q4d">D. Litecoin</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>6. What does the term "mining" mean in cryptocurrency?</p>
+  <div>
+    <input type="radio" name="q5" value="A" id="q5a">
+    <label for="q5a">A. Generating new coins</label>
+  </div>
+  <div>
+    <input type="radio" name="q5" value="B" id="q5b">
+    <label for="q5b">B. Storing digital coins</label>
+  </div>
+  <div>
+    <input type="radio" name="q5" value="C" id="q5c">
+    <label for="q5c">C. Hacking wallets</label>
+  </div>
+  <div>
+    <input type="radio" name="q5" value="D" id="q5d">
+    <label for="q5d">D. Exchanging currencies</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>7. What is the primary purpose of a blockchain?</p>
+  <div>
+    <input type="radio" name="q6" value="A" id="q6a">
+    <label for="q6a">A. Store private keys</label>
+  </div>
+  <div>
+    <input type="radio" name="q6" value="B" id="q6b">
+    <label for="q6b">B. Maintain a decentralized ledger</label>
+  </div>
+  <div>
+    <input type="radio" name="q6" value="C" id="q6c">
+    <label for="q6c">C. Generate tokens</label>
+  </div>
+  <div>
+    <input type="radio" name="q6" value="D" id="q6d">
+    <label for="q6d">D. Perform cryptographic operations</label>
+  </div>
+</div>
+<!-- Add remaining questions here -->
+      </div>
+
+      <button type="button" id="submitQuiz">Submit Quiz</button>
+    </form>
+    <div id="certificate" style="display: none;">
+      <h2>Mandera Crypto Academy</h2>
+      <p id="congratulations"></p>
+      <img id="student-photo" src="" alt="Student Photo">
+      <p id="certificate-details"></p>
+      <p>Signed by: Hussein Hassan</p>
+      <p id="date"></p>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
