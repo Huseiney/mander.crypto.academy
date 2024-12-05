@@ -48,29 +48,24 @@ button:hover {
 
 #certificate {
   text-align: center;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #fdfdfd;
-  border-radius: 8px;
-}
-
-#certificate {
-  text-align: center;
-  padding: 20px;
-  background-color: #fdfdfd;
-  border-radius: 8px;
 }
 
 #certificate-border {
-  border: 10px solid #3498db; /* Blue outer border */
+  width: 90%; /* Full-width for landscape */
+  max-width: 1200px; /* Wider layout */
+  aspect-ratio: 16 / 9; /* Ensures landscape format */
+  border: 10px solid #3498db; /* Blue border */
   border-radius: 12px;
-  padding: 20px;
-  background: linear-gradient(to bottom, #e6f7ff, #ffffff); /* Subtle gradient background */
-  width: 90%; /* Landscape layout, take up more width */
-  max-width: 800px; /* Prevent it from getting too large */
+  background: linear-gradient(to bottom, #e6f7ff, #ffffff); /* Gradient background */
   margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  transform: rotate(0deg); /* Ensure it doesn't get rotated */
-  display: inline-block;
 }
 
 #certificate-border h1 {
@@ -96,8 +91,8 @@ button:hover {
 }
 
 #student-photo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
   margin: 20px 0;
@@ -112,4 +107,8 @@ button:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#download-certificate:hover {
+  background-color: #219150;
 }
