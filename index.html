@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Mandera Crypto Academy Quiz</h1>
+
+    <!-- User Info Form -->
+    <div id="user-info">
+      <form id="userForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="profile">Upload Profile Picture:</label>
+        <input type="file" id="profile" name="profile" accept="image/*" required>
+        
+        <button type="button" id="startQuiz">Start Quiz</button>
+      </form>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div id="quiz" style="display: none;">
+      <form id="quizForm">
+        <div id="questions">
+          <!-- Questions will be dynamically generated here -->
+        </div>
+        <button type="button" id="submitQuiz">Submit</button>
+      </form>
+    </div>
+    
+    <!-- Result Section -->
+    <div id="result" style="display: none;">
+      <h2>Your Results</h2>
+      <p id="score"></p>
+      <canvas id="certificateCanvas"></canvas>
+      <button id="downloadCertificate">Download Certificate</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
