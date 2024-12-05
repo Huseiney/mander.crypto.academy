@@ -25,58 +25,60 @@ document.getElementById("submitQuiz").addEventListener("click", () => {
     return;
   }
 
-  let score = 0;
-  correctAnswers.forEach((answer, index) => {
-    const userAnswer = document.querySelector(`input[name="q${index}"]:checked`);
-    if (userAnswer && userAnswer.value === answer) {
-      score++;
-    }
-  });
-
-  const percentage = ((score / totalQuestions) * 100).toFixed(2);
-  const passed = percentage >= 50;
-
+  // Read the uploaded photo
   reader.onload = () => {
+    // Hide the quiz form and show the certificate section
     document.getElementById("quiz-form").style.display = "none";
     document.getElementById("certificate").style.display = "block";
 
-    const certificateName = document.getElementById("certificate-name");
-    certificateName.innerText = name;
-
-    const studentPhoto = document.getElementById("student-photo");
-    studentPhoto.src = reader.result;
-
-    const dateField = document.getElementById("date");
-    dateField.innerText = `Date: ${new Date().toLocaleDateString()}`;
-
-    document.getElementById("download-certificate").addEventListener("click", () => {
-      downloadCertificate();
+    // Calculate the user's score
+    let score = 0;
+    correctAnswers.forEach((answer, index) => {
+      const userAnswer = document.querySelector(`input[name="q${index}"]:checked`);
+      if (userAnswer && userAnswer.value === answer) {
+        score++;
+      }
     });
 
+    const percentage = ((score / totalQuestions) * 100).toFixed(2);
+    const passed = percentage >= 50;
+
+    // Populate the certificate fields
+    document.getElementById("certificate-name").innerText = name;
+    document.getElementById("student-photo").src = reader.result;
+    document.getElementById("date").innerText = `Date: ${new Date().toLocaleDateString()}`;
+    document.getElementById("certificate-border").innerHTML += `
+      <p>Your Score: ${percentage}%</p>
+      <p>${passed ? "🎉 Congratulations on passing!" : "❌ Better luck next time!"}</p>
+    `;
+
+    // Add download button event listener
+    document.getElementById("download-certificate").addEventListener("click", downloadCertificate);
+
+    // Send results to Telegram
     sendToTelegram(name, percentage, passed);
   };
 
   reader.readAsDataURL(photo);
 });
 
+// Function to download the certificate
 function downloadCertificate() {
   const certificate = document.getElementById("certificate-border");
-  
-  // Ensure certificate is in landscape format when converting
-  html2canvas(certificate, { 
+
+  // Use html2canvas to capture the certificate and generate a downloadable image
+  html2canvas(certificate, {
     scale: 2, // High resolution
-    width: certificate.offsetWidth, 
-    height: certificate.offsetHeight,
-    x: 0,
-    y: 0
+    backgroundColor: null, // Transparent background
   }).then((canvas) => {
     const link = document.createElement("a");
-    link.download = "certificate.png";
+    link.download = "Certificate_of_Completion.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
   });
 }
 
+// Function to send results to Telegram
 function sendToTelegram(name, percentage, passed) {
   const botToken = "8174835485:AAF4vGGDqIqKQvVyNrS2EfpbSuo5yhcY2Yo";
   const chatId = "7361816575";
