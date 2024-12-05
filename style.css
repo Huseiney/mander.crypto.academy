@@ -48,11 +48,63 @@ button:hover {
 
 #certificate {
   text-align: center;
-  margin-top: 20px;
   padding: 20px;
-  border: 2px dashed #444;
-  background: #fff9c4;
+  background-color: #fdfdfd;
+  border-radius: 8px;
 }
+
+#certificate-border {
+  border: 10px solid #3498db; /* Blue outer border */
+  border-radius: 12px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e6f7ff, #ffffff); /* Subtle gradient background */
+}
+
+#certificate-border h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+#certificate-border h2 {
+  color: #3498db;
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+#certificate-border h3 {
+  color: #2c3e50;
+  margin-top: 30px;
+}
+
+#certificate-border p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+#student-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+#download-certificate {
+  margin-top: 20px;
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#download-certificate:hover {
+  background-color: #219150;
+}
+
 
 #student-photo {
   width: 100px;
