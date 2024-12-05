@@ -46,11 +46,11 @@ document.getElementById("submitQuiz").addEventListener("click", () => {
     // Populate the certificate fields
     document.getElementById("certificate-name").innerText = name;
     document.getElementById("student-photo").src = reader.result;
+    document.getElementById("score").innerText = `${percentage}%`;
+    document.getElementById("congratulations").innerText = passed
+      ? "🎉 Congratulations on passing!"
+      : "❌ Better luck next time!";
     document.getElementById("date").innerText = `Date: ${new Date().toLocaleDateString()}`;
-    document.getElementById("certificate-border").innerHTML += `
-      <p>Your Score: ${percentage}%</p>
-      <p>${passed ? "🎉 Congratulations on passing!" : "❌ Better luck next time!"}</p>
-    `;
 
     // Add download button event listener
     document.getElementById("download-certificate").addEventListener("click", downloadCertificate);
