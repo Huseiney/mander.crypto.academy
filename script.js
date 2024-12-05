@@ -61,7 +61,15 @@ document.getElementById("submitQuiz").addEventListener("click", () => {
 
 function downloadCertificate() {
   const certificate = document.getElementById("certificate-border");
-  html2canvas(certificate).then((canvas) => {
+  
+  // Ensure certificate is in landscape format when converting
+  html2canvas(certificate, { 
+    scale: 2, // High resolution
+    width: certificate.offsetWidth, 
+    height: certificate.offsetHeight,
+    x: 0,
+    y: 0
+  }).then((canvas) => {
     const link = document.createElement("a");
     link.download = "certificate.png";
     link.href = canvas.toDataURL("image/png");
