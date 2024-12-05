@@ -27,7 +27,7 @@
           <label><input type="radio" name="q0" value="D"> D. Ripple</label>
         </div>
         <div class="question">
-  <p>4. What is the maximum supply of Bitcoin?</p>
+  <p>2. What is the maximum supply of Bitcoin?</p>
   <div>
     <input type="radio" name="q3" value="A" id="q3a">
     <label for="q3a">A. 21 million</label>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="question">
-  <p>5. Which blockchain is known for introducing smart contracts?</p>
+  <p>3. Which blockchain is known for introducing smart contracts?</p>
   <div>
     <input type="radio" name="q4" value="A" id="q4a">
     <label for="q4a">A. Bitcoin</label>
@@ -67,7 +67,7 @@
 </div>
 
 <div class="question">
-  <p>6. What does the term "mining" mean in cryptocurrency?</p>
+  <p>4. What does the term "mining" mean in cryptocurrency?</p>
   <div>
     <input type="radio" name="q5" value="A" id="q5a">
     <label for="q5a">A. Generating new coins</label>
@@ -87,7 +87,7 @@
 </div>
 
 <div class="question">
-  <p>7. What is the primary purpose of a blockchain?</p>
+  <p>5. What is the primary purpose of a blockchain?</p>
   <div>
     <input type="radio" name="q6" value="A" id="q6a">
     <label for="q6a">A. Store private keys</label>
@@ -110,17 +110,20 @@
 
       <button type="button" id="submitQuiz">Submit Quiz</button>
     </form>
-    <div id="certificate" style="display: none;">
+ <div id="certificate" style="display: none;">
   <div id="certificate-border">
     <div id="certificate-content">
+      <img id="institute-logo" src="path-to-logo.png" alt="Mandera Crypto Academy Logo">
       <h1>Certificate of Completion</h1>
       <p>This certifies that</p>
       <h2 id="certificate-name"></h2>
       <p>has successfully completed the Mandera Crypto Academy course.</p>
-      <p>Wishing you success and financial freedom in your cryptocurrency journey.</p>
       <img id="student-photo" src="" alt="Student Photo">
+      <p>Wishing you success and financial freedom in your cryptocurrency journey.</p>
+      <p>Your Score: <span id="score"></span></p>
+      <p id="congratulations"></p>
       <p>Signed,</p>
-      <h3>Hussein Hassan</h3>
+      <h3>Hussein Hassan Osman</h3>
       <p>Founder, Mandera Crypto Academy</p>
       <p id="date"></p>
     </div>
