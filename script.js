@@ -66,16 +66,43 @@ document.getElementById("submitQuiz").addEventListener("click", () => {
 function downloadCertificate() {
   const certificate = document.getElementById("certificate-border");
 
-  // Use html2canvas to capture the certificate and generate a downloadable image
-  html2canvas(certificate, {
-    scale: 2, // High resolution
-    backgroundColor: null, // Transparent background
-  }).then((canvas) => {
-    const link = document.createElement("a");
-    link.download = "Certificate_of_Completion.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  });
+  // Ensure the user photo is displayed as a high-quality canvas image
+  const studentPhoto = document.getElementById("student-photo");
+  const imgCanvas = document.createElement("canvas");
+  const imgContext = imgCanvas.getContext("2d");
+
+  // Create a temporary canvas for the photo
+  const img = new Image();
+  img.src = studentPhoto.src;
+  img.onload = () => {
+    // Set canvas dimensions to match the image
+    imgCanvas.width = img.naturalWidth;
+    imgCanvas.height = img.naturalHeight;
+
+    // Draw the image onto the canvas
+    imgContext.drawImage(img, 0, 0, imgCanvas.width, imgCanvas.height);
+
+    // Replace the photo in the DOM temporarily with the high-res canvas image
+    studentPhoto.style.display = "none";
+    const canvasPhoto = document.createElement("img");
+    canvasPhoto.src = imgCanvas.toDataURL("image/png");
+    studentPhoto.parentNode.insertBefore(canvasPhoto, studentPhoto);
+
+    // Use html2canvas to capture the certificate and generate a downloadable image
+    html2canvas(certificate, {
+      scale: 2, // High resolution
+      backgroundColor: null, // Transparent background
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "Certificate_of_Completion.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+
+      // Restore the original photo after download
+      canvasPhoto.remove();
+      studentPhoto.style.display = "block";
+    });
+  };
 }
 
 // Function to send results to Telegram
