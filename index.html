@@ -2,137 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Cryptocurrency Quiz</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="quiz-container">
+    <!-- Header -->
     <h1>Cryptocurrency Quiz</h1>
+    
+    <!-- User Info Section -->
     <form id="quiz-form">
       <div id="user-info">
         <label for="name">Enter Your Name:</label>
         <input type="text" id="name" placeholder="Your Name" required>
+        
         <label for="photo">Upload Your Profile Picture:</label>
         <input type="file" id="photo" accept="image/*" required>
       </div>
 
+      <!-- Questions Section -->
       <div id="questions">
-        <!-- Example Question -->
         <div class="question">
           <p>1. What is the first cryptocurrency?</p>
-          <label><input type="radio" name="q0" value="A"> A. Bitcoin</label><br>
-          <label><input type="radio" name="q0" value="B"> B. Ethereum</label><br>
-          <label><input type="radio" name="q0" value="C"> C. Litecoin</label><br>
-          <label><input type="radio" name="q0" value="D"> D. Ripple</label>
+          <label><input type="radio" name="q1" value="A"> A. Bitcoin</label>
+          <label><input type="radio" name="q1" value="B"> B. Ethereum</label>
+          <label><input type="radio" name="q1" value="C"> C. Litecoin</label>
+          <label><input type="radio" name="q1" value="D"> D. Ripple</label>
         </div>
+
         <div class="question">
-  <p>2. What is the maximum supply of Bitcoin?</p>
-  <div>
-    <input type="radio" name="q3" value="A" id="q3a">
-    <label for="q3a">A. 21 million</label>
-  </div>
-  <div>
-    <input type="radio" name="q3" value="B" id="q3b">
-    <label for="q3b">B. 1 billion</label>
-  </div>
-  <div>
-    <input type="radio" name="q3" value="C" id="q3c">
-    <label for="q3c">C. 100 million</label>
-  </div>
-  <div>
-    <input type="radio" name="q3" value="D" id="q3d">
-    <label for="q3d">D. Unlimited</label>
-  </div>
-</div>
+          <p>2. What is the maximum supply of Bitcoin?</p>
+          <label><input type="radio" name="q2" value="A"> A. 21 million</label>
+          <label><input type="radio" name="q2" value="B"> B. 1 billion</label>
+          <label><input type="radio" name="q2" value="C"> C. 100 million</label>
+          <label><input type="radio" name="q2" value="D"> D. Unlimited</label>
+        </div>
 
-<div class="question">
-  <p>3. Which blockchain is known for introducing smart contracts?</p>
-  <div>
-    <input type="radio" name="q4" value="A" id="q4a">
-    <label for="q4a">A. Bitcoin</label>
-  </div>
-  <div>
-    <input type="radio" name="q4" value="B" id="q4b">
-    <label for="q4b">B. Ethereum</label>
-  </div>
-  <div>
-    <input type="radio" name="q4" value="C" id="q4c">
-    <label for="q4c">C. Ripple</label>
-  </div>
-  <div>
-    <input type="radio" name="q4" value="D" id="q4d">
-    <label for="q4d">D. Litecoin</label>
-  </div>
-</div>
+        <div class="question">
+          <p>3. Which blockchain introduced smart contracts?</p>
+          <label><input type="radio" name="q3" value="A"> A. Bitcoin</label>
+          <label><input type="radio" name="q3" value="B"> B. Ethereum</label>
+          <label><input type="radio" name="q3" value="C"> C. Ripple</label>
+          <label><input type="radio" name="q3" value="D"> D. Litecoin</label>
+        </div>
 
-<div class="question">
-  <p>4. What does the term "mining" mean in cryptocurrency?</p>
-  <div>
-    <input type="radio" name="q5" value="A" id="q5a">
-    <label for="q5a">A. Generating new coins</label>
-  </div>
-  <div>
-    <input type="radio" name="q5" value="B" id="q5b">
-    <label for="q5b">B. Storing digital coins</label>
-  </div>
-  <div>
-    <input type="radio" name="q5" value="C" id="q5c">
-    <label for="q5c">C. Hacking wallets</label>
-  </div>
-  <div>
-    <input type="radio" name="q5" value="D" id="q5d">
-    <label for="q5d">D. Exchanging currencies</label>
-  </div>
-</div>
+        <div class="question">
+          <p>4. What does "mining" mean in cryptocurrency?</p>
+          <label><input type="radio" name="q4" value="A"> A. Generating new coins</label>
+          <label><input type="radio" name="q4" value="B"> B. Storing digital coins</label>
+          <label><input type="radio" name="q4" value="C"> C. Hacking wallets</label>
+          <label><input type="radio" name="q4" value="D"> D. Exchanging currencies</label>
+        </div>
 
-<div class="question">
-  <p>5. What is the primary purpose of a blockchain?</p>
-  <div>
-    <input type="radio" name="q6" value="A" id="q6a">
-    <label for="q6a">A. Store private keys</label>
-  </div>
-  <div>
-    <input type="radio" name="q6" value="B" id="q6b">
-    <label for="q6b">B. Maintain a decentralized ledger</label>
-  </div>
-  <div>
-    <input type="radio" name="q6" value="C" id="q6c">
-    <label for="q6c">C. Generate tokens</label>
-  </div>
-  <div>
-    <input type="radio" name="q6" value="D" id="q6d">
-    <label for="q6d">D. Perform cryptographic operations</label>
-  </div>
-</div>
-<!-- Add remaining questions here -->
+        <div class="question">
+          <p>5. What is the primary purpose of a blockchain?</p>
+          <label><input type="radio" name="q5" value="A"> A. Store private keys</label>
+          <label><input type="radio" name="q5" value="B"> B. Maintain a decentralized ledger</label>
+          <label><input type="radio" name="q5" value="C"> C. Generate tokens</label>
+          <label><input type="radio" name="q5" value="D"> D. Perform cryptographic operations</label>
+        </div>
       </div>
 
+      <!-- Submit Button -->
       <button type="button" id="submitQuiz">Submit Quiz</button>
     </form>
- <div id="certificate" style="display: none;">
-  <div id="certificate-border">
-    <div id="certificate-content">
-      <img id="institute-logo" src="mdr1.jpg" alt="Pioneet Crypto Academy Logo">
-      <h1>Certificate of Completion</h1>
-      <p>This certifies that</p>
-      <h2 id="certificate-name"></h2>
-      <p>has successfully completed the Pioneer Crypto Academy course.</p>
-      <img id="student-photo" src="" alt="Student Photo">
-      <p>Wishing you success and financial freedom in your cryptocurrency journey.</p>
-      <p>Your Score: <span id="score"></span></p>
-      <p id="congratulations"></p>
-      <p>Signed,</p>
-      <h3>Hussein</h3>
-      <p>Founder, Pioneer Crypto Academy</p>
-      <p id="date"></p>
+
+    <!-- Certificate Section -->
+    <div id="certificate" style="display: none;">
+      <div id="certificate-border">
+        <div id="certificate-content">
+          <img id="institute-logo" src="mdr1.jpg" alt="Pioneer Crypto Academy Logo">
+          <h1>Certificate of Completion</h1>
+          <p>This certifies that</p>
+          <h2 id="certificate-name"></h2>
+          <p>has successfully completed the Pioneer Crypto Academy quiz.</p>
+          <img id="student-photo" src="" alt="Student Photo">
+          <p>Wishing you success and financial freedom in your cryptocurrency journey.</p>
+          <p>Your Score: <span id="score"></span></p>
+          <p id="congratulations"></p>
+          <p>Signed,</p>
+          <h3>Hussein</h3>
+          <p>Founder, Pioneer Crypto Academy</p>
+          <p id="date"></p>
+        </div>
+      </div>
+      <button id="download-certificate">Download Certificate</button>
     </div>
   </div>
-  <button id="download-certificate">Download Certificate</button>
-</div>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
 </body>
 </html>
